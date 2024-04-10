@@ -182,7 +182,7 @@ class DataHandler:
                 if self.lidarr_stop_event.is_set():
                     return
                 endpoint = f"{self.lidarr_address}/api/v1/wanted/missing?includeArtist=true"
-                params = {"apikey": self.lidarr_api_key, "page": page, "sortKey": "artists.sortname", "sortDirection": "ascending"}
+                params = {"apikey": self.lidarr_api_key, "page": page, "sortKey": "artists.sortName", "sortDirection": "ascending"}
                 response = requests.get(endpoint, params=params, timeout=self.lidarr_api_timeout)
                 if response.status_code == 200:
                     wanted_missing_albums = response.json()
